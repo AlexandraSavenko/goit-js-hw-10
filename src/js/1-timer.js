@@ -29,16 +29,18 @@ function compareDates(selectedDates) {
   if (selectedDates < currentDate) {
     alert('Please choose a date in the future');
   } else {
-    userSelectedDate = selectedDates;
+    userSelectedDate = selectedDates - currentDate;
     elements.button.classList.remove('inactive');
   }
-  console.log(userSelectedDate);
+  return userSelectedDate;
 }
+
 function handlerClick(event) {
   console.log('It works!');
   console.log(convertMs(userSelectedDate));
   return convertMs(userSelectedDate);
 }
+
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
