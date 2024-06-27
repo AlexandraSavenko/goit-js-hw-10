@@ -46,9 +46,16 @@ fieldset legend {
   letter-spacing: 0.04em;
   color: #fff;
 }
+.form button:hover {
+  background: #6c8cff;
+}
 input[type='number'][name='delay'][required] {
+  padding-left: 16px;
   border: 1px solid #808080;
   border-radius: 4px;
   width: 360px;
   height: 40px;
+}
+input[type='number'][name='delay'][required]:focus {
+  border: 1px solid #4e75ff;
 }
