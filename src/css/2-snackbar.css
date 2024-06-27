@@ -1,3 +1,54 @@
 body {
   background-color: beige;
 }
+.form fieldset {
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  stroke-width: 1px;
+  stroke: #808080;
+  margin: 0;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+fieldset legend {
+  text-align: left;
+}
+
+.form label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+.form label:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  margin-bottom: 15px;
+}
+.form button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 360px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+input[type='number'][name='delay'][required] {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 360px;
+  height: 40px;
+}
