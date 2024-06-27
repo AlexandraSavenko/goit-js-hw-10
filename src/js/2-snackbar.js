@@ -1,3 +1,7 @@
+// import Toast from 'izitoast';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+// import { default as Toast } from 'izitoast';
 console.log('you can do it!');
 const form = document.querySelector('.form');
 form.addEventListener('submit', handlerSubmit);
@@ -18,5 +22,17 @@ function handlerSubmit(event) {
       }
     }, delay);
   });
-  promise.then(value => alert(value)).catch(value => alert(value));
+  promise
+    .then(value =>
+      Toast.info({
+        message: value,
+        position: 'topRight',
+      })
+    )
+    .catch(value =>
+      Toast.info({
+        message: value,
+        position: 'topRight',
+      })
+    );
 }
