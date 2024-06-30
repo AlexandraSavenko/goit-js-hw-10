@@ -26,13 +26,14 @@ function handlerSubmit(event) {
     .then(value =>
       iziToast.show({
         message: value,
-        backgroundColor: 'green',
+        backgroundColor: '#59a10d',
         position: 'topRight',
       })
     )
     .catch(value =>
       iziToast.info({
         message: value,
+        backgroundColor: '#ef4040',
         position: 'topRight',
       })
     );

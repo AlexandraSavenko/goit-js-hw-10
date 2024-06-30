@@ -11,7 +11,6 @@ const options = {
   },
 };
 flatpickr('#datetime-picker', options);
-let userSelectedDate = 0;
 
 const elements = {
   button: document.querySelector('button[data-start]'),
@@ -20,29 +19,34 @@ const elements = {
   minute: document.querySelector('[data-minutes]'),
   second: document.querySelector('[data-seconds]'),
 };
+let userSelectedDate = 0;
 
 elements.button.classList.add('inactive');
 elements.button.addEventListener('click', handlerClick);
 
-function compareDates(selectedDates) {
+function compareDates(selectedDate) {
   const currentDate = new Date();
-  if (selectedDates < currentDate) {
+  if (selectedDate < currentDate) {
     alert('Please choose a date in the future');
   } else {
-    userSelectedDate = selectedDates - currentDate;
+    userSelectedDate = selectedDate - currentDate;
     elements.button.classList.remove('inactive');
   }
   return userSelectedDate;
 }
 
 function handlerClick(event) {
-  console.log('It works!');
   const dateChosen = convertMs(userSelectedDate);
-  console.log(dateChosen);
   elements.day.textContent = dateChosen.days;
   elements.hour.textContent = dateChosen.hours;
   elements.minute.textContent = dateChosen.minutes;
   elements.second.textContent = dateChosen.seconds;
+  const countBack = setInterval(() => {
+    Number(elements.day.textContent) - 1;
+    Number(elements.hour.textContent) - 1;
+    Number(elements.minute.textContent) - 1;
+    Number(elements.second.textContent) - 1;
+  }, 1000);
 }
 
 function convertMs(ms) {
