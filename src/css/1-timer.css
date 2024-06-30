@@ -13,6 +13,11 @@ body {
   height: 40px;
   padding-left: 8px;
 }
+.form button.inactive {
+  pointer-events: none;
+  background: #cfcfcf;
+  color: #989898;
+}
 button[data-start] {
   border: none;
   border-radius: 8px;
@@ -30,12 +35,9 @@ button[data-start] {
 button[data-start]:hover {
   background: #6c8cff;
   color: #fff;
+  cursor: pointer;
 }
-.inactive {
-  pointer-events: none;
-  background: #cfcfcf;
-  color: #989898;
-}
+
 .timer {
   display: flex;
   gap: 24px;

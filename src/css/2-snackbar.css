@@ -33,6 +33,10 @@ fieldset legend {
   color: #2e2f42;
   margin-bottom: 15px;
 }
+/* .form button.inactive {
+  background: #cfcfcf;
+  color: #989898;
+} */
 .form button {
   border: none;
   border-radius: 8px;
@@ -48,7 +52,9 @@ fieldset legend {
 }
 .form button:hover {
   background: #6c8cff;
+  cursor: pointer;
 }
+
 input[type='number'][name='delay'][required] {
   padding-left: 16px;
   border: 1px solid #808080;

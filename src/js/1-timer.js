@@ -29,23 +29,27 @@ function compareDates(selectedDate) {
   if (selectedDate < currentDate) {
     alert('Please choose a date in the future');
   } else {
-    userSelectedDate = selectedDate - currentDate;
+    userSelectedDate = selectedDate;
     elements.button.classList.remove('inactive');
   }
-  return userSelectedDate;
 }
 
-function handlerClick(event) {
-  const dateChosen = convertMs(userSelectedDate);
-  elements.day.textContent = dateChosen.days;
-  elements.hour.textContent = dateChosen.hours;
-  elements.minute.textContent = dateChosen.minutes;
-  elements.second.textContent = dateChosen.seconds;
-  const countBack = setInterval(() => {
-    Number(elements.day.textContent) - 1;
-    Number(elements.hour.textContent) - 1;
-    Number(elements.minute.textContent) - 1;
-    Number(elements.second.textContent) - 1;
+function handlerClick() {
+  elements.button.classList.add('inactive');
+  const countDown = setInterval(() => {
+    const now = new Date();
+    const timeRemaining = userSelectedDate - now;
+    console.log(timeRemaining);
+    if (timeRemaining <= 0) {
+      clearInterval(countDown);
+      alert('Time is up!');
+      return;
+    }
+    const timeComponents = convertMs(timeRemaining);
+    elements.day.textContent = timeComponents.days;
+    elements.hour.textContent = timeComponents.hours;
+    elements.minute.textContent = timeComponents.minutes;
+    elements.second.textContent = timeComponents.seconds;
   }, 1000);
 }
 
@@ -67,7 +71,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
