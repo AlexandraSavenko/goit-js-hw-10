@@ -13,6 +13,7 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 const elements = {
+  input: document.querySelector('#datetime-picker'),
   button: document.querySelector('button[data-start]'),
   day: document.querySelector('[ data-days]'),
   hour: document.querySelector('[data-hours]'),
@@ -36,6 +37,7 @@ function compareDates(selectedDate) {
 
 function handlerClick() {
   elements.button.classList.add('inactive');
+  elements.input.style.backgroundColor = '#f5f5f5';
   const countDown = setInterval(() => {
     const now = new Date();
     const timeRemaining = userSelectedDate - now;
