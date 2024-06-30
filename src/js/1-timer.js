@@ -37,8 +37,12 @@ function compareDates(selectedDates) {
 
 function handlerClick(event) {
   console.log('It works!');
-  console.log(convertMs(userSelectedDate));
-  return convertMs(userSelectedDate);
+  const dateChosen = convertMs(userSelectedDate);
+  console.log(dateChosen);
+  elements.day.textContent = dateChosen.days;
+  elements.hour.textContent = dateChosen.hours;
+  elements.minute.textContent = dateChosen.minutes;
+  elements.second.textContent = dateChosen.seconds;
 }
 
 function convertMs(ms) {

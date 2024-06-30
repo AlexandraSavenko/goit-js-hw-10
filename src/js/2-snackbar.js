@@ -24,13 +24,14 @@ function handlerSubmit(event) {
   });
   promise
     .then(value =>
-      Toast.info({
+      iziToast.show({
         message: value,
+        backgroundColor: 'green',
         position: 'topRight',
       })
     )
     .catch(value =>
-      Toast.info({
+      iziToast.info({
         message: value,
         position: 'topRight',
       })
