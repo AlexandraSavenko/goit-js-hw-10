@@ -1,6 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
-
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -28,7 +29,20 @@ elements.button.addEventListener('click', handlerClick);
 function compareDates(selectedDate) {
   const currentDate = new Date();
   if (selectedDate < currentDate) {
-    alert('Please choose a date in the future');
+    iziToast.info({
+      message: 'Please choose a date in the future',
+      backgroundColor: '#ef4040',
+      messageColor: '#fff',
+      // icon: (
+      //   <svg width="24" height="24">
+      //     <use href="../img/symbol-defs.svg#icon-no"></use>
+      //   </svg>
+      // ),
+      iconColor: '#fff',
+      iconText: 'x',
+      position: 'topRight',
+    });
+    // alert('Please choose a date in the future');
   } else {
     userSelectedDate = selectedDate;
     elements.button.classList.remove('inactive');
