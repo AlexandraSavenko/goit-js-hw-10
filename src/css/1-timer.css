@@ -17,11 +17,11 @@ body {
 #datetime-picker:hover {
   border: 1px solid #4e75ff;
 }
-.form button.inactive {
+/* .form button.inactive {
   pointer-events: none;
   background: #cfcfcf;
   color: #989898;
-}
+} */
 button[data-start] {
   border: none;
   border-radius: 8px;
@@ -35,8 +35,16 @@ button[data-start] {
   letter-spacing: 0.04em;
   color: #fff;
 }
-
-button[data-start]:hover {
+button[data-start].inactive {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+button[data-start].active {
+  background-color: #4e75ff;
+  cursor: pointer;
+}
+button[data-start].active:hover {
   background: #6c8cff;
   color: #fff;
   cursor: pointer;
