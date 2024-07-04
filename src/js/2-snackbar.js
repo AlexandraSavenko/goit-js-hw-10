@@ -33,5 +33,6 @@ function handlerSubmit(event) {
         backgroundColor: '#ef4040',
         position: 'topRight',
       })
-    );
+    )
+    .finally(() => form.reset());
 }
