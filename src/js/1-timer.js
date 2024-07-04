@@ -49,7 +49,6 @@ function handlerClick() {
   const countDown = setInterval(() => {
     const now = new Date();
     const timeRemaining = userSelectedDate - now;
-    console.log(timeRemaining);
     if (timeRemaining <= 0) {
       clearInterval(countDown);
       alert('Time is up!');

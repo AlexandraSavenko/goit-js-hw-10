@@ -2,7 +2,7 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 // import { default as Toast } from 'izitoast';
-console.log('you can do it!');
+
 const form = document.querySelector('.form');
 form.addEventListener('submit', handlerSubmit);
 function handlerSubmit(event) {
@@ -10,9 +10,6 @@ function handlerSubmit(event) {
   const formInside = event.target;
   const delay = event.target.elements.delay.value;
   const stateF = event.target.elements.state.value;
-  console.dir(formInside);
-  console.log(delay);
-  console.log(stateF);
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (stateF === 'fulfilled') {
