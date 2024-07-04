@@ -55,11 +55,14 @@ function handlerClick() {
       return;
     }
     const timeComponents = convertMs(timeRemaining);
-    elements.day.textContent = timeComponents.days;
-    elements.hour.textContent = timeComponents.hours;
-    elements.minute.textContent = timeComponents.minutes;
-    elements.second.textContent = timeComponents.seconds;
+    elements.day.textContent = padWithZero(timeComponents.days);
+    elements.hour.textContent = padWithZero(timeComponents.hours);
+    elements.minute.textContent = padWithZero(timeComponents.minutes);
+    elements.second.textContent = padWithZero(timeComponents.seconds);
   }, 1000);
+}
+function padWithZero(num) {
+  return num.toString().padStart(2, '0');
 }
 
 function convertMs(ms) {
